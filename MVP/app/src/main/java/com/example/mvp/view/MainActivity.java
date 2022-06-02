@@ -15,15 +15,16 @@ public class MainActivity extends AppCompatActivity implements ILoginView {
     EditText mail, password;
     Button btnLogin;
     ILoginPresenter loginPresenter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initViews();
-        initBusinessLogic();
+        initListeners();
     }
 
-    private void initBusinessLogic() {
+    private void initListeners() {
         loginPresenter = new LoginPresenter(this);
         btnLogin.setOnClickListener(view -> loginPresenter.onLogin(mail.getText().toString(), password.getText().toString()));
     }
@@ -35,12 +36,7 @@ public class MainActivity extends AppCompatActivity implements ILoginView {
     }
 
     @Override
-    public void onLoginSuccess(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
-    }
-
-    @Override
-    public void onLoginError(String message) {
+    public void onLogin(String message) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

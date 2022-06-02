@@ -17,8 +17,8 @@ public class LoginPresenter implements ILoginPresenter{
     public void onLogin(String mail, String password) {
         User user = new User(mail, password);
         if(user.isValid())
-            loginView.onLoginSuccess(successMessage);
+            loginView.onLogin(successMessage);
         else
-            loginView.onLoginError(errorMessage);
+            loginView.onLogin(errorMessage);
     }
 }

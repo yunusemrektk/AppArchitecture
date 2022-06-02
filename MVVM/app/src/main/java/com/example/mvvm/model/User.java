@@ -7,7 +7,7 @@ public class User {
     @Nullable
     private String mail, password;
 
-    public User(String mail, String password) {
+    public User(@Nullable String mail, @Nullable String password) {
         this.mail = mail;
         this.password = password;
     }
