@@ -4,6 +4,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.example.mvc.model.Counter;
+import com.example.mvc.view.INotify;
+
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -12,6 +15,18 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        Counter counter = null;
+        Counter finalCounter = counter;
+
+        INotify notify = () -> {
+            if (finalCounter != null) {
+                assertEquals(finalCounter.getValue(), 1);
+
+            }
+        };
+        counter = new Counter(notify);
+        counter.setValue(1);
+
+        // model has dependency on view
     }
 }

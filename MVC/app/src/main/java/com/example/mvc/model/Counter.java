@@ -1,10 +1,13 @@
 package com.example.mvc.model;
 
+import com.example.mvc.view.INotify;
+
 public class Counter {
-    private int result;
+    private int result = 0;
+    INotify notify;
 
-    public Counter() {
-
+    public Counter(INotify iNotify) {
+        this.notify = iNotify;
     }
 
     public int getValue() {
@@ -23,5 +26,7 @@ public class Counter {
                 result = 0;
                 break;
         }
+
+        notify.onNotify();
     }
 }
