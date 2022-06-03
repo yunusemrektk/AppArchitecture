@@ -40,4 +40,11 @@ public class MainActivity extends AppCompatActivity {
             System.out.println(password);
         }
     }
+
+    @BindingAdapter("mailLogging")
+    public static void runMailLog(View view, String mail) {
+        if(mail != null) {
+            System.out.println(mail);
+        }
+    }
 }

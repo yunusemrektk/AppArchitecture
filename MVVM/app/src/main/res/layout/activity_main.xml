@@ -28,6 +28,7 @@
                 android:inputType="textEmailAddress"
                 android:padding="8dp"
                 android:text="@={viewModel.userMail}"
+                bind:mailLogging="@{viewModel.userMail}"
                 android:importantForAutofill="no" />
 
 

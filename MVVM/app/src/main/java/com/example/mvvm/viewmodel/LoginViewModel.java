@@ -8,6 +8,7 @@ import com.example.mvvm.BR;
 import com.example.mvvm.model.User;
 
 public class LoginViewModel extends BaseObservable {
+
     private User user;
     private final String successMessage = "Login was successful";
     private final String errorMessage = "User is not valid";
@@ -28,8 +29,8 @@ public class LoginViewModel extends BaseObservable {
         notifyPropertyChanged(BR.toastMessage);
     }
 
-    public void setUserMail(String email) {
-        user.setMail(email);
+    public void setUserMail(String mail) {
+        user.setMail(mail);
         notifyPropertyChanged(BR.userMail);
     }
 
